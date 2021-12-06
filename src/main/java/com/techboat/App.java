@@ -51,6 +51,15 @@ public class App {
         };
         show.accept(p);
 
+        // and()
+        Predicate<String> starrtwithX = (strtx) -> {
+            return strtx.startsWith("x");
+        };
+        Predicate<String> lengthstr = (strl) -> {
+            return ((strl.length() > 3) ? true : false);
+        };
+        Predicate<String> somPredicate = starrtwithX.and(lengthstr);
+        System.out.println(somPredicate.test("xxxxx"));
     }
 
 }
